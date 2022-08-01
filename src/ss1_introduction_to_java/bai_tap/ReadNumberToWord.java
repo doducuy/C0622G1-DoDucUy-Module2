@@ -6,16 +6,16 @@ public class ReadNumberToWord {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
         int num;
-        char numChuoiOne = 0;
-        char numChuoiTwo = 0;
+        char numOne = 0;
+        char numTwo = 0;
         System.out.print("input number: ");
         num =scanner.nextInt();
         if(num>=20&& num <100){
-            String numChuoi = Integer.toString(num);
-            numChuoiOne= numChuoi.charAt(0);
-            numChuoiTwo = numChuoi.charAt(1);
+            String numString = Integer.toString(num);
+            numOne= numString.charAt(0);
+            numTwo = numString.charAt(1);
         }
-        switch (numChuoiOne){
+        switch (numOne){
             case '2':
                 System.out.print("twenty ");
                 break;
@@ -41,7 +41,7 @@ public class ReadNumberToWord {
                 System.out.print("ninety ");
                 break;
         }
-        switch (numChuoiTwo){
+        switch (numTwo){
             case '1':
                 System.out.println("one");
                 break;
