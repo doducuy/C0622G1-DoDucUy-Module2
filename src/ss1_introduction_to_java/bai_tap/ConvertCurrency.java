@@ -7,10 +7,10 @@ public class ConvertCurrency {
         Scanner scanner = new Scanner(System.in);
         double vnd = 23000;
         double usd;
-        System.out.print("Nhập số tiền cần chuyển đổi (USD): ");
+        System.out.print("Enter the amount to convert (USD): ");
         usd = scanner.nextDouble();
         double moneyCovert = usd * vnd;
-        System.out.print("Số tiền chuyển đổi là: " + moneyCovert + " VND");
+        System.out.print("the amount to convert: " + moneyCovert + " VND");
 
     }
 }
