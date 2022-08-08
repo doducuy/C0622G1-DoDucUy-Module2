@@ -1,8 +1,8 @@
 package ss5_access_modifier_static_method_static_property.exercise.access_modifier;
 
 public class Circle {
-    double radius = 1;
-    String color = "red";
+    private double radius = 1;
+    private String color = "red";
 
     public Circle() {
     }
