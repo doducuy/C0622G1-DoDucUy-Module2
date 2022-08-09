@@ -1,17 +1,15 @@
-package ss5_access_modifier_static_method_static_property.exercise.access_modifier;
-
-import ss6_iheritance.practice.bai_thuc_hanh_he_cac_doi_tuong_hinh_hoc.model.Shape;
+package ss7_abstract_class_interface.exercise.implement_interface_colorable.model;
 
 public class Circle extends Shape {
-    private double radius = 1;
-//    private String color = "red";
+    private double radius = 1.0;
 
     public Circle() {
     }
 
-    public Circle(double r) {
-        this.radius = r;
+    public Circle(double radius) {
+        this.radius = radius;
     }
+
     public Circle(double radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;
@@ -37,7 +35,8 @@ public class Circle extends Shape {
     public String toString() {
         return "A Circle with radius="
                 + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
+                + " ,Area="
+                + String.format("%.2f", getArea());
+
     }
 }

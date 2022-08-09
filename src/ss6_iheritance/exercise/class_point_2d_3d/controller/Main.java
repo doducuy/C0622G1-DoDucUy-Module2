@@ -1,6 +1,6 @@
-package ss6_iheritance.exercise.class_point_2d_3d.model;
+package ss6_iheritance.exercise.class_point_2d_3d.controller;
 
-import ss6_iheritance.exercise.class_point_2d_3d.controller.Point3D;
+import ss6_iheritance.exercise.class_point_2d_3d.model.Point3D;
 
 public class Main {
     public static void main(String[] args) {

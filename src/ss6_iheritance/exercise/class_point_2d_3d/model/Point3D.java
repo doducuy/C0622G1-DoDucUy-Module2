@@ -1,4 +1,6 @@
-package ss6_iheritance.exercise.class_point_2d_3d.controller;
+package ss6_iheritance.exercise.class_point_2d_3d.model;
+
+import ss6_iheritance.exercise.class_point_2d_3d.model.Point2D;
 
 import java.util.Arrays;
 
