@@ -1,6 +1,5 @@
-package s11_stack_queue.exercise.reverse_element_array;
+package ss11_stack_queue.exercise.reverse_element_array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 

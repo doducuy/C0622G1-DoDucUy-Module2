@@ -1,4 +1,4 @@
-package s11_stack_queue.exercise.change_decimal_binary;
+package ss11_stack_queue.exercise.change_decimal_binary;
 
 import java.util.Scanner;
 import java.util.Stack;

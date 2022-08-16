@@ -1,4 +1,4 @@
-package s11_stack_queue.exercise.check_alindrome;
+package ss11_stack_queue.exercise.check_alindrome;
 
 import java.util.*;
 

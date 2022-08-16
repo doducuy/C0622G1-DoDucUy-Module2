@@ -1,4 +1,4 @@
-package s11_stack_queue.exercise.check_bracket;
+package ss11_stack_queue.exercise.check_bracket;
 
 import java.util.Scanner;
 import java.util.Stack;
