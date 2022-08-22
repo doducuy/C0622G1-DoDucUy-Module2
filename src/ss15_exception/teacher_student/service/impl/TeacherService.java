@@ -153,6 +153,7 @@ public class TeacherService implements ITeacher {
         String id;
         while (true) {
             boolean checkId = false;
+            boolean chechId2=false;
             System.out.print("Mời bạn nhập id=");
             id = scanner.nextLine();
             for (Teacher item : teacherList
@@ -162,7 +163,16 @@ public class TeacherService implements ITeacher {
                     checkId = true;
                 }
             }
-            if (!checkId) {
+            try{
+                if(id.equals("")){
+                    chechId2=true;
+                    throw new PointException("BẠn không thể để  trông id");
+                }
+            }
+            catch (PointException e){
+                System.out.println(e.getMessage());
+            }
+            if (!checkId&&!chechId2) {
                 break;
             }
         }
@@ -233,4 +243,5 @@ public class TeacherService implements ITeacher {
         }
         return null;
     }
+
 }

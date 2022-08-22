@@ -10,12 +10,18 @@ import java.util.Scanner;
 
 public class StudentService implements IStudent {
     public Scanner scanner = new Scanner(System.in);
+    private static final String path = "src/bai_tap_lam_them/bai3_mvc_quan_ly_codegym/data/student.txt";
+    ReadStudentFile readStudentFile = new ReadStudentFile();
+    WriteStudentFile writeStudentFile = new WriteStudentFile();
     private static List<Student> studentList = new ArrayList<>();
 
     @Override
     public void addStudent() {
+        studentList = readStudentFile.readFile(path);
         studentList.add(getInforStudent());
+        writeStudentFile.writeStudentFile(path, studentList);
         System.out.println("Thêm học sinh mới thành công");
+
     }
 
     @Override
@@ -29,6 +35,7 @@ public class StudentService implements IStudent {
 
     @Override
     public void deleteStudent() {
+        studentList = readStudentFile.readStudentFile(path);
         Student student = findStudentByID("xóa");
         if (student == null) {
             System.out.println("ID không tồn tại trong danh sách!");
@@ -41,6 +48,7 @@ public class StudentService implements IStudent {
         if (choose == 1) {
             studentList.remove(student);
             System.out.println("Xóa sinh viên thành công");
+            writeStudentFile.writeStudentFile(path, studentList);
         } else {
             System.out.println("Xóa sinh viên không thành công");
         }
@@ -48,6 +56,7 @@ public class StudentService implements IStudent {
 
     @Override
     public void editStudent() {
+        studentList = readStudentFile.readStudentFile(path);
         Student student = findStudentByID("chỉnh sửa");
         int choose;
         do {
@@ -88,6 +97,7 @@ public class StudentService implements IStudent {
                     return;
             }
             System.out.println("Chỉnh sửa thành công!");
+            writeStudentFile.writeStudentFile(path, studentList);
             System.out.println("Bạn có muốn tiếp tục chỉnh sửa?");
             System.out.println("1- Có ------------- 2- Hoàn tất");
             choose = Integer.parseInt(scanner.nextLine());
@@ -148,6 +158,7 @@ public class StudentService implements IStudent {
         String id;
         while (true) {
             boolean checkId = false;
+            boolean checkId2=false;
             System.out.println("Mời bạn nhập id");
             id = scanner.nextLine();
             for (Student item : studentList
@@ -157,7 +168,16 @@ public class StudentService implements IStudent {
                     checkId = true;
                 }
             }
-            if (!checkId) {
+            try {
+                if(id.equals("")){
+                    checkId2=true;
+                    throw new PointException("Bạn không thể để trông id:");
+                }
+            }
+            catch (PointException e){
+                System.out.println(e.getMessage());
+            }
+            if (!checkId&&!checkId2) {
                 break;
             }
         }
@@ -165,7 +185,6 @@ public class StudentService implements IStudent {
         String name = scanner.nextLine();
         System.out.print("Ngày sinh = ");
         String dateOfBirth = scanner.nextLine();
-        System.out.print("Giới tính = ");
         double score;
         while (true) {
             try {
