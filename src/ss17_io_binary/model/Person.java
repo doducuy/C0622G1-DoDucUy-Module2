@@ -1,18 +1,16 @@
-package ss15_exception.teacher_student.model;
+package ss17_io_binary.model;
 
-public class Person {
-    private String id;
-    private String name;
-    private String gender;
-    private String dateOfBirth;
+public abstract class Person {
+    private  String id;
+    private  String name;
+    private  String dateOfBirth;
 
     public Person() {
     }
 
-    public Person(String id, String name, String gender, String dateOfBirth) {
+    public Person(String id, String name, String dateOfBirth) {
         this.id = id;
         this.name = name;
-        this.gender = gender;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -32,14 +30,6 @@ public class Person {
         this.name = name;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getDateOfBirth() {
         return dateOfBirth;
     }
@@ -51,9 +41,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 '}';
     }

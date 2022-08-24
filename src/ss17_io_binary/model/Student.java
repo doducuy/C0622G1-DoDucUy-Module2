@@ -1,28 +1,28 @@
-package ss15_exception.teacher_student.model;
+package ss17_io_binary.model;
 
-public class Student extends Person {
-    private double score;
+public class Student extends Person{
+    private Double score;
     private String nameClass;
-    public Student(){
 
+    public Student() {
     }
 
-    public Student(double score, String nameClass) {
+    public Student(Double score, String nameClass) {
         this.score = score;
         this.nameClass = nameClass;
     }
 
-    public Student(String id, String name, String gender, String dateOfBirth, double score, String nameClass) {
-        super(id, name, gender, dateOfBirth);
+    public Student(String id, String name, String dateOfBirth, Double score, String nameClass) {
+        super(id, name, dateOfBirth);
         this.score = score;
         this.nameClass = nameClass;
     }
 
-    public double getScore() {
+    public Double getScore() {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 
@@ -36,9 +36,9 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{" +super.toString()+
+        return "Student{" +
                 "score=" + score +
                 ", nameClass='" + nameClass + '\'' +
-                '}';
+                '}'+super.toString();
     }
 }
